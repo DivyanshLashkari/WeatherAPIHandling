@@ -10,13 +10,12 @@ const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.set('view engine', 'ejs'); // Set the view engine to ejs
-app.set('views', __dirname); // Set the views directory to the current directory
-
+app.set('view engine', 'ejs'); 
+app.set('views', __dirname); 
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.render("index"); // Render the index.ejs file
+  res.render("index"); 
 });
 
 app.post('/getWeather', async (req, res) => {
@@ -39,7 +38,7 @@ async function getWeatherData(cities) {
       params: {
         q: city,
         appid: apiKey,
-        units: 'metric', // Change to 'imperial' for Fahrenheit
+        units: 'metric', 
       },
     });
 
